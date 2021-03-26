@@ -1,0 +1,48 @@
+﻿@model Penguins_Front_End.Models.ViewModels.AssignRoleVM
+
+@{
+    ViewData["Title"] = "AssignRoles";
+}
+
+<h1>AssignRoles</h1>
+
+<h4>AssignRoleVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AssignRoles">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <select asp-for="UserName" class="form-control">
+                    @foreach (var name in Model.UserNames)
+                    {
+                        <option value="@name">@name</option>
+                    }
+                </select>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoleName" class="control-label"></label>
+                <select asp-for="RoleName" class="form-control">
+                    @foreach (var name in Model.RoleNames)
+                    {
+                        <option value="@name">@name</option>
+                    }
+                </select>
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

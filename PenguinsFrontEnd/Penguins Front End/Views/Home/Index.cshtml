@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Graphical Data";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+
+<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+<body>
+    <div id="container" style="width: 75%; height: 50%;"></div>
+    
+    <script>
+        anychart.onDocumentReady(function () {
+            //Should pull from JSON/use api instead
+           var data = {
+               header: ["Name", "Test"],
+                rows: [
+                    ["Hello", 22],
+                    ["World!", 34],
+                    ["This", 2],
+                    ["Is", 1],
+                    ["A", 200],
+                    ["Bar", 99],
+                    ["Chart", 200]
+                ]
+            };
+
+           @* var data = "{'header': {'Name','Test'},'rows': [{'Hello',22},{'World',34}]};";*@
+
+            var chart = anychart.column();
+            chart.data(data);
+            chart.title("Read-only Metrics");
+            chart.container('container');
+            chart.draw();
+        });
+    </script>
+    
+</body>
