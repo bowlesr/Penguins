@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pYB+OG+u6CldVNUaPi5OA0GtcwwdpvTK+Q6LDOLyNG9yBbOKfY9FeeTz2P9isweaefzXs8FrbRJfyet/MpZagw==",
+  "dgSpecHash": "aZIlVs0wjeBBHpc7FqGK4lcaJTkWKziZwVc3tkxLaiOhupv+CZzUohkzKCVPGyWC4iCLZcIXyc9F7A5nZyqOkQ==",
   "success": true,
-  "projectFilePath": "G:\\ETSU\\GetHub\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+  "projectFilePath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rbowl\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rbowl\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

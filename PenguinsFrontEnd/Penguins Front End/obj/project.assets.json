@@ -9136,11 +9136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ETSU\\GetHub\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+      "projectUniqueName": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
       "projectName": "Penguins Front End",
-      "projectPath": "G:\\ETSU\\GetHub\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+      "projectPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
       "packagesPath": "C:\\Users\\rbowl\\.nuget\\packages\\",
-      "outputPath": "G:\\ETSU\\GetHub\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
+      "outputPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\ETSU\\GetHub\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj": {}
+    "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj": {}
   },
   "projects": {
-    "G:\\ETSU\\GetHub\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj": {
+    "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\ETSU\\GetHub\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj",
+        "projectUniqueName": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj",
         "projectName": "PenguinsAPI",
-        "projectPath": "G:\\ETSU\\GetHub\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj",
+        "projectPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj",
         "packagesPath": "C:\\Users\\rbowl\\.nuget\\packages\\",
-        "outputPath": "G:\\ETSU\\GetHub\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\obj\\",
+        "outputPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

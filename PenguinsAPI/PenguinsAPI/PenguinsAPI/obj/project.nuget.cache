@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tqa7xaejeGWFsYmWeMiAIwOPzO1XsqekUYHgmJgMPd1mWtdJo18ixWxssumj50Df9gUoXKY3E4P5yE6OzZK32A==",
+  "dgSpecHash": "xKZaQYYl4AobX0m5K7+MG/VC3i+HeqPxPfQfzTFzeHz/pj+EEX3vnYATCnM4oTK/CTl1wFBKJYzgF/IewkeoMw==",
   "success": true,
-  "projectFilePath": "G:\\ETSU\\GetHub\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj",
+  "projectFilePath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI\\PenguinsAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rbowl\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rbowl\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
