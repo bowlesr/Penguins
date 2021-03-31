@@ -23,11 +23,34 @@ namespace Penguins_Front_End.Controllers
         private readonly IUserRepository _userRepo; //Injected the UserRepository
         private readonly IRoleRepository _roleRepo; //Injected the RoleRepository
         private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
-        private List<MetricsVM> data = new List<MetricsVM>();
+        private List<MetricsVM> data = new List<MetricsVM>();        
+
+        
         public UserController(IUserRepository userRepo, IRoleRepository roleRepo)
         {
             _userRepo = userRepo;
-            _roleRepo = roleRepo;
+            _roleRepo = roleRepo;            
+        }
+
+        public string ChartData()
+        {
+            
+            //       userName, howMany
+            Dictionary<string, int> userCount = new Dictionary<string, int>();
+            foreach (var item in data)
+            {                
+                if (userCount.ContainsKey(item.UserName))
+                {
+                    userCount[item.UserName] += 1;
+                }
+                else
+                {
+                    userCount.Add(item.UserName,1);
+                }                
+            }
+            var sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented);            
+            return sjson;
+            
         }
 
         /// <summary>
@@ -36,6 +59,7 @@ namespace Penguins_Front_End.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Index()
         {
+            
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(url);
@@ -51,7 +75,7 @@ namespace Penguins_Front_End.Controllers
                     var metrics = response.Content.ReadAsStringAsync().Result;
                     data = JsonConvert.DeserializeObject<List<MetricsVM>>(metrics);
                 }
-
+                ChartData();
                 return View(data);
             }
 
