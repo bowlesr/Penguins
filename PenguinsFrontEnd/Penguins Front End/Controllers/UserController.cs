@@ -48,7 +48,12 @@ namespace Penguins_Front_End.Controllers
                     userCount.Add(item.UserName,1);
                 }                
             }
-            var sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented);            
+            var sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented);
+            sjson = sjson.Replace('{', '[');
+            sjson = sjson.Replace('}', ']');
+            sjson = sjson.Replace(':', ',');
+            Console.WriteLine(sjson);
+            
             return sjson;
             
         }
