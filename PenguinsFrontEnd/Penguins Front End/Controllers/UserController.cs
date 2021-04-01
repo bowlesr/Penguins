@@ -37,21 +37,27 @@ namespace Penguins_Front_End.Controllers
             
             //       userName, howMany
             Dictionary<string, int> userCount = new Dictionary<string, int>();
-            foreach (var item in data)
-            {                
+            foreach (var item in data)                
                 if (userCount.ContainsKey(item.UserName))
-                {
                     userCount[item.UserName] += 1;
-                }
                 else
-                {
-                    userCount.Add(item.UserName,1);
-                }                
-            }
+                    userCount.Add(item.UserName,1);             
+
             var sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented);
-            sjson = sjson.Replace('{', '[');
-            sjson = sjson.Replace('}', ']');
-            sjson = sjson.Replace(':', ',');
+            
+            sjson = sjson.Replace('{', '[')
+                .Replace('}', ']')
+                .Replace(':', ',');
+            
+            var text = sjson.Split(new [] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries );
+            for ( int i = 0; i < text.Length; i++ ) {
+                if ( text[i].Length <= 1 ) continue;
+                text[i] = text[i].Trim()
+                    .Insert(0,"[")
+                    .Insert(text[i].Length-2,"]");
+            }
+            sjson = string.Join('\n',text);
+
             Console.WriteLine(sjson);
             
             return sjson;
