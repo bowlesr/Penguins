@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Penguins Front End", "Penguins Front End.csproj", "{406FF33D-CF97-4230-9511-037552B3DE9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PenguinsTest", "..\PenguinsTest\PenguinsTest.csproj", "{F76ADBE6-F7BB-44DE-98BB-E57998D59B5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PenguinsTest", "..\PenguinsTest\PenguinsTest.csproj", "{D5E0BBCD-3A2D-4D1C-8989-F4CBA72F4B5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{406FF33D-CF97-4230-9511-037552B3DE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{406FF33D-CF97-4230-9511-037552B3DE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{406FF33D-CF97-4230-9511-037552B3DE9C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F76ADBE6-F7BB-44DE-98BB-E57998D59B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F76ADBE6-F7BB-44DE-98BB-E57998D59B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F76ADBE6-F7BB-44DE-98BB-E57998D59B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F76ADBE6-F7BB-44DE-98BB-E57998D59B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E0BBCD-3A2D-4D1C-8989-F4CBA72F4B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E0BBCD-3A2D-4D1C-8989-F4CBA72F4B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E0BBCD-3A2D-4D1C-8989-F4CBA72F4B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E0BBCD-3A2D-4D1C-8989-F4CBA72F4B5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
