@@ -72,7 +72,7 @@ namespace Penguins_Front_End
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=User}/{action=Index}/{id?}");
+                    pattern: "{controller=Data}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

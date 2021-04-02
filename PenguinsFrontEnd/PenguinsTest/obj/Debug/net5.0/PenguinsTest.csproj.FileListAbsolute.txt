@@ -224,3 +224,4 @@ G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.dll
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.pdb
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.csprojAssemblyReference.cache
+G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.StaticWebAssets.xml
