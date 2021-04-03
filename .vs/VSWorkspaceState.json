@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PenguinsFrontEnd",
+    "\\PenguinsFrontEnd\\Penguins Front End",
+    "\\PenguinsFrontEnd\\Penguins Front End\\Controllers",
+    "\\PenguinsFrontEnd\\Penguins Front End\\Views",
+    "\\PenguinsFrontEnd\\Penguins Front End\\Views\\Home"
   ],
+  "SelectedNode": "\\PenguinsFrontEnd\\Penguins Front End\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

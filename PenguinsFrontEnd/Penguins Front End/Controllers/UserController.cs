@@ -13,6 +13,8 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Net.Http.Json;
 using System.Text;
+using System.Web;
+//using System.Web.Services;
 using System.Threading;
 
 namespace Penguins_Front_End.Controllers
@@ -23,8 +25,8 @@ namespace Penguins_Front_End.Controllers
         private readonly IUserRepository _userRepo; //Injected the UserRepository
         private readonly IRoleRepository _roleRepo; //Injected the RoleRepository
         private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
-        private List<MetricsVM> data = new List<MetricsVM>();        
-
+        private List<MetricsVM> data = new List<MetricsVM>();
+        private static string sjson = String.Empty;
         
         public UserController(IUserRepository userRepo, IRoleRepository roleRepo)
         {
@@ -32,7 +34,8 @@ namespace Penguins_Front_End.Controllers
             _roleRepo = roleRepo;            
         }
 
-        public string ChartData()
+        [HttpGet]
+        public void ChartData()
         {
             
             //       userName, howMany
@@ -41,9 +44,8 @@ namespace Penguins_Front_End.Controllers
                 if (userCount.ContainsKey(item.UserName))
                     userCount[item.UserName] += 1;
                 else
-                    userCount.Add(item.UserName,1);             
-
-            var sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented);
+                    userCount.Add(item.UserName,1);
+            sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented);
             
             sjson = sjson.Replace('{', '[')
                 .Replace('}', ']')
@@ -58,9 +60,6 @@ namespace Penguins_Front_End.Controllers
             }
             sjson = string.Join('\n',text);
 
-            Console.WriteLine(sjson);
-            
-            return sjson;
             
         }
 
@@ -87,6 +86,7 @@ namespace Penguins_Front_End.Controllers
                     data = JsonConvert.DeserializeObject<List<MetricsVM>>(metrics);
                 }
                 ChartData();
+                ViewBag.data = sjson;
                 return View(data);
             }
 

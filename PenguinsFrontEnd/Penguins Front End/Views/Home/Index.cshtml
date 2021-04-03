@@ -4,36 +4,113 @@
 
 <h1>@ViewData["Title"]</h1>
 
-
-
-<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+<header>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</header>
 <body>
-    <div id="container" style="width: 75%; height: 50%;"></div>
-    
-    <script>
-        anychart.onDocumentReady(function () {
-            //Should pull from JSON/use api instead
-           var data = {
-               header: ["Name", "Test"],
-                rows: [
-                    ["Hello", 22],
-                    ["World!", 34],
-                    ["This", 2],
-                    ["Is", 1],
-                    ["A", 200],
-                    ["Bar", 99],
-                    ["Chart", 200]
-                ]
-            };
+    <div class="container">
+        <h2 id="h2">Index</h2>
+        <figure class="highcharts-figure container">
+            <div id="container-fluid" class="container-fluid"></div>
+            <p class="highcharts-description">
+                A basic column chart .
+            </p>
+        </figure>
+    </div>
+    <script type="text/javascript">
 
-           @* var data = "{'header': {'Name','Test'},'rows': [{'Hello',22},{'World',34}]};";*@
+        google.charts.load('visualization', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawLineChart);
+        function drawLineChart() {
+            $(document).ready(function () {
+            @*var result = @ViewBag.data;
+            console.log(result);
+            console.log("HELLO");
+            var name = [];
+            var id = [];
+            var login = [];
+            var logout = [];
+            *@
+                var response = $.ajax({
+                    type: "GET",
+                    url: "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics",
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    async: true,
+                    success: function (result) {
+                        $.each(result, function (key, item) {
+                            name.push(item.name);
+                            id.push(item.id);
+                            login.push(item.login);
+                            logout.push(item.logout);
+                        });
+                        //loadChart(name, id, login, logout);
+                    },
+                    error: function (errormessage) {
+                        $('#h2').html(errormessage.responseText);
+                        return false;
+                    }
+                }).responseText;
 
-            var chart = anychart.column();
-            chart.data(data);
-            chart.title("Read-only Metrics");
-            chart.container('container');
-            chart.draw();
-        });
+                var options = {
+                    title: 'Title',
+                    curveType: 'function',
+                    legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 14 } }  // You can position the legend on 'top' or at the 'bottom'.
+                };
+
+                var figures = google.visualization.arrayToDataTable(name);
+
+                var chart = new google.visualization.LineChart(document.getElementById('container-fluid'));
+                chart.draw(figures, options);      // Draw the chart with Options.
+
+            @*function loadChart(category, val2, val3, val4) {
+                Highcharts.chart('container-fluid', {
+                    chart: {
+                        type: 'column',
+                    },
+                    title: {
+                        text: 'No. of Application Received yearly '
+                    },
+                    subtitle: {
+                        text: 'Source: LocalDb.com'
+                    },
+                    xAxis: {
+                        categories: category,
+                        crosshair: true
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Number of Application'
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr href="#"><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y} </b></td></tr>',
+                        footerFormat: '</table>'
+                    },
+                    shared: true,
+                    useHTML: true
+                }, series, [{
+                    name: 'Total',
+                    data: val2,
+                    color: '#ccb1fc',
+                }, {
+                    name: 'Concluded',
+                    data: val3,
+                    color: '#b0ceff',
+                }, {
+                    name: 'Not Concluded',
+                    data: val4,
+                    color: '#fcb1f0'
+                }]
+        *@});
+        }
     </script>
-    
+
 </body>
