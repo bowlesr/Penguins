@@ -1,7 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PenguinsFrontEnd",
+    "\\PenguinsAPI",
     "\\PenguinsFrontEnd\\Penguins Front End",
     "\\PenguinsFrontEnd\\Penguins Front End\\Data",
     "\\PenguinsFrontEnd\\Penguins Front End\\Data\\Migrations",
@@ -12,6 +12,6 @@
     "\\PenguinsFrontEnd\\Penguins Front End\\Views",
     "\\PenguinsFrontEnd\\Penguins Front End\\Views\\Home"
   ],
-  "SelectedNode": "\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.sln",
+  "SelectedNode": "\\PenguinsAPI\\PenguinsAPI.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -26,11 +26,38 @@
 
         google.charts.load('visualization', { packages: ['corechart'] });
         google.charts.setOnLoadCallback(drawLineChart);
+
+        function chartData(x, y, title, curve) {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn(typeof (x), x);
+            data.addColumn(typeof (y), y);
+            x.forEach((xval, index) => {
+                const yval = y[index];
+                data.addRows([
+                    [xval, yval],
+                ]);
+            });
+        
+            var options = {
+                title: title,
+                curveType: curve,
+                legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 14 } }  // You can position the legend on 'top' or at the 'bottom'.
+            };
+
+            var bar_chart = new google.visualization.BarChart(document.getElementById('container-fluid'));
+            bar_chart.draw(data, options);      // Draw the chart with Options
+        }
+
         function drawLineChart() {
             $(document).ready(function () {
-                var people = [];
+                var name = [];
+                var id = [];
+                var login = [];
+                var logout = [];
+
                
-                var response = $.ajax({
+                $.ajax({
                     type: "GET",
                     url: "https://localhost:44391/api/Metrics",
                     //url: "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics", //Uncomment when redeployed
@@ -41,69 +68,20 @@
                     success: function (result) {
                         $.each(result, function (key, item) {
                             document.getElementById("jsonLiteral").innerHTML += "<br>" + item.userName + " has id " + item.userId + " and logged in at " + item.loginTime + " and out at " + item.logoutTime;
+                            name.push(item.userName);
+                            id.push(item.userId);
+                            login.push(item.loginTime);
+                            logout.push(item.logoutTime);
                         });
-                       
-                        //loadChart(name, id, login, logout);
+
+                        chartData(name,id,'User vs UserID','function');
                     },
                     error: function (errormessage) {
                         $('#h2').html(errormessage.responseText);
                         return false;
                     }
-                }).responseText;
-
-                var options = {
-                    title: 'Title',
-                    curveType: 'function',
-                    legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 14 } }  // You can position the legend on 'top' or at the 'bottom'.
-                };
-
-                //var figures = google.visualization.arrayToDataTable(name);
-
-                var chart = new google.visualization.LineChart(document.getElementById('container-fluid'));
-                //chart.draw(figures, options);      // Draw the chart with Options.
-
-            @*function loadChart(category, val2, val3, val4) {
-                Highcharts.chart('container-fluid', {
-                    chart: {
-                        type: 'column',
-                    },
-                    title: {
-                        text: 'No. of Application Received yearly '
-                    },
-                    subtitle: {
-                        text: 'Source: LocalDb.com'
-                    },
-                    xAxis: {
-                        categories: category,
-                        crosshair: true
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Number of Application'
-                        }
-                    },
-                    tooltip: {
-                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                        pointFormat: '<tr href="#"><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y} </b></td></tr>',
-                        footerFormat: '</table>'
-                    },
-                    shared: true,
-                    useHTML: true
-                }, series, [{
-                    name: 'Total',
-                    data: val2,
-                    color: '#ccb1fc',
-                }, {
-                    name: 'Concluded',
-                    data: val3,
-                    color: '#b0ceff',
-                }, {
-                    name: 'Not Concluded',
-                    data: val4,
-                    color: '#fcb1f0'
-                }]
-        *@});
+                });
+            });
         }
     </script>
 
