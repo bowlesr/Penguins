@@ -39,6 +39,11 @@ namespace PenguinsAPI
             //Allows SQL connections
             services.AddDbContext<MetricsDBContext>(options => options.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod().AllowAnyHeader());
+            });
             //Enables use of repo
             services.AddScoped<IMetricsRepository, DBMetricsRepository>();
         }
@@ -60,7 +65,8 @@ namespace PenguinsAPI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
+            app.UseCors("CorsPolicy");
             app.UseRouting();
 
             app.UseAuthorization();

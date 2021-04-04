@@ -40,6 +40,16 @@ namespace Penguins_Front_End
                 .AddUserManager<UserManager<ApplicationUser>>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                            //.WithOrigins(our front-end url goes here)
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            //.AllowCredentials()
+                );
+            });
             services.AddControllersWithViews();
             services.AddScoped<IUserRepository, DbUserRepository>(); //Added DbUserRepository and Interface to ConfigureServices
             services.AddScoped<Initializer>(); //Configured Initializer
@@ -62,8 +72,9 @@ namespace Penguins_Front_End
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCors();
             app.UseRouting();
+            
 
             app.UseAuthentication();
             app.UseAuthorization();

@@ -16,6 +16,7 @@
         <h2 id="h2">Index</h2>
         <figure class="highcharts-figure container">
             <div id="container-fluid" class="container-fluid"></div>
+            <p id="jsonLiteral"></p>
             <p class="highcharts-description">
                 A basic column chart .
             </p>
@@ -27,28 +28,21 @@
         google.charts.setOnLoadCallback(drawLineChart);
         function drawLineChart() {
             $(document).ready(function () {
-            @*var result = @ViewBag.data;
-            console.log(result);
-            console.log("HELLO");
-            var name = [];
-            var id = [];
-            var login = [];
-            var logout = [];
-            *@
+                var people = [];
+               
                 var response = $.ajax({
                     type: "GET",
-                    url: "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics",
+                    url: "https://localhost:44391/api/Metrics",
+                    //url: "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics", //Uncomment when redeployed
                     data: "{}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     async: true,
                     success: function (result) {
                         $.each(result, function (key, item) {
-                            name.push(item.name);
-                            id.push(item.id);
-                            login.push(item.login);
-                            logout.push(item.logout);
+                            document.getElementById("jsonLiteral").innerHTML += "<br>" + item.userName + " has id " + item.userId + " and logged in at " + item.loginTime + " and out at " + item.logoutTime;
                         });
+                       
                         //loadChart(name, id, login, logout);
                     },
                     error: function (errormessage) {
@@ -63,10 +57,10 @@
                     legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 14 } }  // You can position the legend on 'top' or at the 'bottom'.
                 };
 
-                var figures = google.visualization.arrayToDataTable(name);
+                //var figures = google.visualization.arrayToDataTable(name);
 
                 var chart = new google.visualization.LineChart(document.getElementById('container-fluid'));
-                chart.draw(figures, options);      // Draw the chart with Options.
+                //chart.draw(figures, options);      // Draw the chart with Options.
 
             @*function loadChart(category, val2, val3, val4) {
                 Highcharts.chart('container-fluid', {
