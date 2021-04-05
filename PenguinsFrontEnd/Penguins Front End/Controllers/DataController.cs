@@ -54,7 +54,7 @@ namespace Penguins_Front_End.Controllers
         }
 
         // POST: DataController1/Create
-        [HttpPost]
+        [HttpPost] 
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(MetricsVM metricsVM)
         {
