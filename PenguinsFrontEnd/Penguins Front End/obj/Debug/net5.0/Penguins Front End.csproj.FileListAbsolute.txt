@@ -510,3 +510,6 @@ C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\Penguins Front End\o
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\ref\Penguins Front End.dll
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.pdb
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.genruntimeconfig.cache
+G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.csprojAssemblyReference.cache
+G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Razor\Views\Data\Index.cshtml.g.cs
+G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Razor\Views\Data\Create.cshtml.g.cs
