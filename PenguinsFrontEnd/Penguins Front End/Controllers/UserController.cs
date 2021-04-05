@@ -62,7 +62,7 @@ namespace Penguins_Front_End.Controllers
         /// Index action method
         /// </summary>
         /// <returns></returns>
-        public async Task<IActionResult> Index()
+        /*public async Task<IActionResult> Index()
         {
             
             using (var client = new HttpClient())
@@ -84,9 +84,9 @@ namespace Penguins_Front_End.Controllers
                 return View(data);
             }
 
-        }
+        }*/
 
-        public IActionResult Create()
+       /* public IActionResult Create()
         {
             return View();
         }
@@ -112,9 +112,9 @@ namespace Penguins_Front_End.Controllers
                     }
                 }
             } 
-        }
+        }*/
         
-        public ActionResult Delete(int id)
+        /*public ActionResult Delete(int id)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -132,7 +132,7 @@ namespace Penguins_Front_End.Controllers
             }
 
             return RedirectToAction("Index");
-        }
+        }*/
 
         public async Task<IActionResult> UserList()
         {
