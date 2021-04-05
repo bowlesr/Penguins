@@ -19,6 +19,9 @@ namespace Penguins_Front_End.Controllers
         private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
         private List<MetricsVM> data = new List<MetricsVM>();
 
+        //Empty Constructor to be able to create an object for testing
+        public DataController() { }
+
         // GET: DataController1
         public async Task<ActionResult> Index()
         {
