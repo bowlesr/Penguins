@@ -513,3 +513,5 @@ C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\Penguins Front End\o
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.csprojAssemblyReference.cache
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Razor\Views\Data\Index.cshtml.g.cs
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Razor\Views\Data\Create.cshtml.g.cs
+C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Razor\Views\Data\Create.cshtml.g.cs
+C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Razor\Views\Data\Index.cshtml.g.cs

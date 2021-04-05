@@ -32,6 +32,11 @@ namespace Penguins_Front_End.Controllers
             _roleRepo = roleRepo;            
         }
 
+        //Empty Constructor to be able to create an object for testing
+        public UserController()
+        {
+        }
+
         public string ChartData()
         {
             
