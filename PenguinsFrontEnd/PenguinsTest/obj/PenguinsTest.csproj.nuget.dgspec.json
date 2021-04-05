@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {}
+    "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
+    "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+        "projectUniqueName": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
         "projectName": "Penguins Front End",
-        "projectPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
-        "packagesPath": "C:\\Users\\zcarr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
+        "projectPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+        "packagesPath": "C:\\Users\\rbowl\\.nuget\\packages\\",
+        "outputPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zcarr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rbowl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -95,18 +101,24 @@
         }
       }
     },
-    "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {
+    "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
+        "projectUniqueName": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
         "projectName": "PenguinsTest",
-        "projectPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
-        "packagesPath": "C:\\Users\\zcarr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\obj\\",
+        "projectPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
+        "packagesPath": "C:\\Users\\rbowl\\.nuget\\packages\\",
+        "outputPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\zcarr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rbowl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -119,8 +131,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
-                "projectPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj"
+              "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
+                "projectPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj"
               }
             }
           }
