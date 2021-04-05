@@ -29,7 +29,7 @@ namespace Penguins_Front_End.Controllers
         public UserController(IUserRepository userRepo, IRoleRepository roleRepo)
         {
             _userRepo = userRepo;
-            _roleRepo = roleRepo;            
+            _roleRepo = roleRepo;             
         }
 
         public string ChartData()

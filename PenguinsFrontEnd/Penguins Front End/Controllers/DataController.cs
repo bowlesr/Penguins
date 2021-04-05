@@ -20,7 +20,7 @@ namespace Penguins_Front_End.Controllers
         private List<MetricsVM> data = new List<MetricsVM>();
 
         // GET: DataController1
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index() 
         {
             using (var client = new HttpClient())
             {
