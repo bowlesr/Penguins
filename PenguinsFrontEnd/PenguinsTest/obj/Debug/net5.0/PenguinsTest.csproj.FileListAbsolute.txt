@@ -236,7 +236,6 @@ C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Deb
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.deps.json
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.runtimeconfig.json
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.runtimeconfig.dev.json
-C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.StaticWebAssets.xml
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.exe
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\PenguinsTest.deps.json
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\PenguinsTest.runtimeconfig.json
@@ -451,3 +450,4 @@ C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Deb
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\ref\PenguinsTest.dll
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.pdb
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.genruntimeconfig.cache
+C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\bin\Debug\net5.0\Penguins Front End.StaticWebAssets.xml

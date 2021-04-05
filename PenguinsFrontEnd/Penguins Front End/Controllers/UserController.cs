@@ -25,6 +25,10 @@ namespace Penguins_Front_End.Controllers
         private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
         private List<MetricsVM> data = new List<MetricsVM>();        
 
+        public UserController()
+        {
+
+        }
         
         public UserController(IUserRepository userRepo, IRoleRepository roleRepo)
         {

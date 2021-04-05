@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 using Penguins_Front_End.Models.Entities;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ namespace PenguinsTest
     {
         //ACT
         ApplicationUser user = new ApplicationUser();
-
+        
         [Fact]
         public void UserNameTest()
         {
@@ -41,7 +40,7 @@ namespace PenguinsTest
             list.Add("User");
 
             //ASSERT
-
+           
             Assert.Contains("Admin", list);
             Assert.Contains("User", list);
 
@@ -52,7 +51,7 @@ namespace PenguinsTest
         {
             List<string> list = new List<string>();
             list = (List<string>)user.Roles;
-
+            
             Assert.NotNull(list);
 
         }
