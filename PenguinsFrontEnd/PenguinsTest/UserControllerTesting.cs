@@ -3,9 +3,14 @@ using Penguins_Front_End.Controllers;
 
 namespace PenguinsTest
 {
+    ///  This class has the tests for the User Controller
+    ///  Using Xunit 
+    ///  Author: Zachary Carrier
     public class UserControllerTest
     {
-
+        /// Test to check if Chart Data is null
+        /// 
+        /// Author: Zachary Carrier
         [Fact]
         public void IsChartDataNull()
         {
@@ -19,6 +24,9 @@ namespace PenguinsTest
             Assert.NotNull(result);
         }
 
+        /// Test to check if User List is null
+        /// 
+        /// Author: Zachary Carrier
         [Fact]
         public void IsUserListNull()
         {
@@ -32,6 +40,9 @@ namespace PenguinsTest
             Assert.NotNull(result);
         }
 
+        /// Test to check if Assign Role is null
+        /// 
+        /// Author: Zachary Carrier
         [Fact]
         public void IsAssignRoleNull()
         {
@@ -44,7 +55,5 @@ namespace PenguinsTest
             //ASSERT
             Assert.NotNull(result);
         }
-
-
     }
 }

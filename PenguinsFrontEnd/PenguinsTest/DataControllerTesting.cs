@@ -3,8 +3,14 @@ using Penguins_Front_End.Controllers;
 
 namespace PenguinsTest
 {
+    ///  This class has the tests for the Data Controller
+    ///  Using Xunit 
+    ///  Author: Zachary Carrier
     public class DataControllerTest
     {
+        /// Test that checks to see if Index view is null
+        /// 
+        /// Author: Zachary Carrier
         [Fact]
         public void IsIndexNull()
         {
@@ -22,6 +28,9 @@ namespace PenguinsTest
 
         }
 
+        /// Test that checks to see if Create view is null
+        /// 
+        /// Author: Zachary Carrier
         [Fact]
         public void IsCreateNull()
         {
@@ -38,6 +47,9 @@ namespace PenguinsTest
             Assert.NotNull(result);
         }
 
+        /// Test that checks to see if Delete view is null
+        /// 
+        /// Author: Zachary Carrier
         [Fact]
         public void IsDeleteNull()
         {
