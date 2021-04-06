@@ -4,36 +4,96 @@
 
 <h1>@ViewData["Title"]</h1>
 
-
-
-<script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+<header>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</header>
 <body>
-    <div id="container" style="width: 75%; height: 50%;"></div>
-    
-    <script>
-        anychart.onDocumentReady(function () {
-            //Should pull from JSON/use api instead
-           var data = {
-               header: ["Name", "Test"],
-                rows: [
-                    ["Hello", 22],
-                    ["World!", 34],
-                    ["This", 2],
-                    ["Is", 1],
-                    ["A", 200],
-                    ["Bar", 99],
-                    ["Chart", 200]
-                ]
+    <div class="container">
+        <h2 id="h2">Index</h2>
+        <figure class="highcharts-figure container">
+            <div id="container-fluid" class="container-fluid"></div>
+            <p id="jsonLiteral"></p>
+            <p class="highcharts-description">
+                A basic column chart .
+            </p>
+        </figure>
+    </div>
+    <script type="text/javascript">
+
+        google.charts.load('visualization', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawLineChart);
+
+        function chartData(x, y, title, curve) {
+
+            const type = input =>
+                Object.prototype.toString.call(input).replace(/(\[object |\])/ig, '').toLowerCase();
+
+            var data = new google.visualization.DataTable();
+
+            //console.log("X: "+x);
+            //console.log("X: "+y);
+            debugger;
+            data.addColumn(type(x), x);
+            data.addColumn(type(y), y);
+            x.forEach((xval, index) => {
+                console.log('X: ' + x);
+                console.log('Y: ' + y[index]);
+                const yval = y[index];
+                data.addRows([
+                    [xval, yval],
+                ]);
+            });
+
+            var options = {
+                title: title,
+                curveType: curve,
+                legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 14 } }  // You can position the legend on 'top' or at the 'bottom'.
             };
 
-           @* var data = "{'header': {'Name','Test'},'rows': [{'Hello',22},{'World',34}]};";*@
+            var bar_chart = new google.visualization.BarChart(document.getElementById('container-fluid'));
+            bar_chart.draw(data, options);      // Draw the chart with Options
+        }
 
-            var chart = anychart.column();
-            chart.data(data);
-            chart.title("Read-only Metrics");
-            chart.container('container');
-            chart.draw();
-        });
+        function drawLineChart() {
+            $(document).ready(function () {
+                var name = [];
+                var id = [];
+                var login = [];
+                var logout = [];
+
+
+                $.ajax({
+                    type: "GET",
+                    url: "https://localhost:44391/api/Metrics",
+                    //url: "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics", //Uncomment when redeployed
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    async: true,
+                    success: function (result) {
+                        $.each(result, function (key, item) {
+                            document.getElementById("jsonLiteral").innerHTML += "<br>" + item.userName + " has id " + item.userId + " and logged in at " + item.loginTime + " and out at " + item.logoutTime;
+                            name.push(item.userName);
+                            id.push(item.userId);
+                            login.push(item.loginTime);
+                            logout.push(item.logoutTime);
+                        });
+
+                        chartData(name, id, 'User vs UserID', 'function');
+                    },
+                    error: function (errormessage) {
+                        $('#h2').html(errormessage.responseText);
+                        return false;
+                    }
+                });
+            });
+        }
     </script>
-    
+
 </body>
+
+
