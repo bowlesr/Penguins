@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\PenguinsAPI",
+    "\\PenguinsFrontEnd",
     "\\PenguinsFrontEnd\\Penguins Front End",
-    "\\PenguinsFrontEnd\\Penguins Front End\\Data",
-    "\\PenguinsFrontEnd\\Penguins Front End\\Data\\Migrations",
     "\\PenguinsFrontEnd\\Penguins Front End\\Models",
     "\\PenguinsFrontEnd\\Penguins Front End\\Models\\Entities",
     "\\PenguinsFrontEnd\\Penguins Front End\\Models\\ViewModels",
@@ -12,6 +11,6 @@
     "\\PenguinsFrontEnd\\Penguins Front End\\Views",
     "\\PenguinsFrontEnd\\Penguins Front End\\Views\\Home"
   ],
-  "SelectedNode": "\\PenguinsAPI\\PenguinsAPI.sln",
+  "SelectedNode": "\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.sln",
   "PreviewInSolutionExplorer": false
 }

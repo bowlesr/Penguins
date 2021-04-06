@@ -29,16 +29,25 @@
 
         function chartData(x, y, title, curve) {
 
+            const type = input =>
+                Object.prototype.toString.call(input).replace(/(\[object |\])/ig, '').toLowerCase();
+
             var data = new google.visualization.DataTable();
-            data.addColumn(typeof (x), x);
-            data.addColumn(typeof (y), y);
+
+            //console.log("X: "+x);
+            //console.log("X: "+y);
+            debugger;
+            data.addColumn(type(x), x);
+            data.addColumn(type(y), y);
             x.forEach((xval, index) => {
+                console.log('X: '+x);
+                console.log('Y: '+y[index]);
                 const yval = y[index];
                 data.addRows([
                     [xval, yval],
                 ]);
             });
-        
+
             var options = {
                 title: title,
                 curveType: curve,
@@ -56,7 +65,7 @@
                 var login = [];
                 var logout = [];
 
-               
+
                 $.ajax({
                     type: "GET",
                     url: "https://localhost:44391/api/Metrics",

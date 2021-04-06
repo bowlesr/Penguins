@@ -340,6 +340,7 @@ G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\n
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\ref\Penguins Front End.dll
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.pdb
 G:\ETSU\GetHub\Penguins\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.genruntimeconfig.cache
+C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\bin\Debug\net5.0\web.config
 C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\bin\Debug\net5.0\appsettings.json
 C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\bin\Debug\net5.0\Penguins Front End.StaticWebAssets.xml
@@ -510,5 +511,4 @@ C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\P
 C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\ref\Penguins Front End.dll
 C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.pdb
 C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.genruntimeconfig.cache
-C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\bin\Debug\net5.0\web.config
 C:\Users\Jonesad\Penguins\PenguinsFrontEnd\Penguins Front End\obj\Debug\net5.0\Penguins Front End.csprojAssemblyReference.cache
