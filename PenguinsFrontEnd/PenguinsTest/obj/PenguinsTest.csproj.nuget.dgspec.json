@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {}
+    "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
+    "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+        "projectUniqueName": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
         "projectName": "Penguins Front End",
-        "projectPath": "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
-        "packagesPath": "C:\\Users\\dnels_psysmc8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
+        "projectPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+        "packagesPath": "C:\\Users\\zcarr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dnels_psysmc8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zcarr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -91,21 +91,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {
+    "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
+        "projectUniqueName": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
         "projectName": "PenguinsTest",
-        "projectPath": "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
-        "packagesPath": "C:\\Users\\dnels_psysmc8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\obj\\",
+        "projectPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\PenguinsTest.csproj",
+        "packagesPath": "C:\\Users\\zcarr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\PenguinsTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dnels_psysmc8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zcarr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -119,8 +119,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
-                "projectPath": "C:\\Users\\dnels_psysmc8\\source\\repos\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj"
+              "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj": {
+                "projectPath": "C:\\Users\\zcarr\\Documents\\SE2\\repo\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj"
               }
             }
           }
@@ -167,14 +167,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

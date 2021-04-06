@@ -3,9 +3,16 @@ using Penguins_Front_End.Controllers;
 
 namespace PenguinsTest
 {
+    /// Class that holds the tests for the Data Controller
+    /// Using Xunit
+    /// Author: Zachary Carrier
     public class UserControllerTest
     {
-
+        /// <summary>
+        /// 
+        /// Test to check if Chart Data view is null
+        /// 
+        /// </summary>
         [Fact]
         public void IsChartDataNull()
         {
@@ -19,6 +26,11 @@ namespace PenguinsTest
             Assert.NotNull(result);
         }
 
+        /// <summary>
+        /// 
+        /// Test to check if User List view is null
+        /// 
+        /// </summary>
         [Fact]
         public void IsUserListNull()
         {
@@ -32,6 +44,11 @@ namespace PenguinsTest
             Assert.NotNull(result);
         }
 
+        /// <summary>
+        /// 
+        /// Test to check if Assign Role view is null
+        /// 
+        /// </summary>
         [Fact]
         public void IsAssignRoleNull()
         {
@@ -44,7 +61,5 @@ namespace PenguinsTest
             //ASSERT
             Assert.NotNull(result);
         }
-
-
     }
 }
