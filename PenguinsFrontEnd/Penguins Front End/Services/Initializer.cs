@@ -5,6 +5,11 @@ using Penguins_Front_End.Models.Entities;
 
 namespace Penguins_Front_End.Services
 {
+    /// <summary>
+    /// 
+    /// Initializer to set the roles of users
+    /// 
+    /// </summary>
     public class Initializer
     {
         //Injected the data context, user manager, and role manager into Initializer
@@ -12,6 +17,14 @@ namespace Penguins_Front_End.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
+        /// <summary>
+        /// 
+        /// Initializer Constructor
+        /// 
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="userManager"></param>
+        /// <param name="roleManager"></param>
         public Initializer(ApplicationDbContext db, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _db = db;
@@ -20,7 +33,9 @@ namespace Penguins_Front_End.Services
         }
 
         /// <summary>
+        /// 
         /// Async method to seed users.
+        /// 
         /// </summary>
         public async Task SeedUsersAsync()
         {

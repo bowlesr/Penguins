@@ -8,7 +8,9 @@ using Penguins_Front_End.Models.Entities;
 namespace Penguins_Front_End.Services
 {
     /// <summary>
+    /// 
     /// IUserRepository implementation
+    /// 
     /// </summary>
     /// <seealso cref="Penguins_Front_End.Services.IUserRepository" />
     public class DbUserRepository : IUserRepository
@@ -16,6 +18,13 @@ namespace Penguins_Front_End.Services
         private ApplicationDbContext _db;
         private UserManager<ApplicationUser> _userManager; //Injected UserManager
 
+        /// <summary>
+        /// 
+        /// DbUserRepo Constructor
+        /// 
+        /// </summary>
+        /// <param name="db"></param>
+        /// <param name="userManager"></param>
         public DbUserRepository(ApplicationDbContext db, UserManager<ApplicationUser> userManager)
         {
             _db = db;
@@ -23,10 +32,12 @@ namespace Penguins_Front_End.Services
         }
 
         /// <summary>
+        /// 
         /// Reads the ApplicationUser asynchronous.
+        /// 
         /// </summary>
         /// <param name="userName">Name of the user.</param>
-        /// <returns></returns>
+        /// <returns>user</returns>
         public async Task<ApplicationUser> ReadAsync(string userName) //Changed Read to ReadAsync and added the async keyword
         {
             //return _db.Users.FirstOrDefault(u => u.UserName == userName);
@@ -36,9 +47,11 @@ namespace Penguins_Front_End.Services
         }
 
         /// <summary>
+        /// 
         /// Reads all ApplicationUsers asynchronous.
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>users</returns>
         public async Task<IQueryable<ApplicationUser>> ReadAllAsync()
         {
             var users = _db.Users;
@@ -50,11 +63,13 @@ namespace Penguins_Front_End.Services
         }
 
         /// <summary>
+        /// 
         /// Assigns the role asynchronous.
+        /// 
         /// </summary>
         /// <param name="userName">Name of the user.</param>
         /// <param name="roleName">Name of the role.</param>
-        /// <returns></returns>
+        /// <returns>boolean</returns>
         public async Task<bool> AssignRoleAsync(string userName, string roleName)
         {
             var user = await ReadAsync(userName); //Read the user using userName
