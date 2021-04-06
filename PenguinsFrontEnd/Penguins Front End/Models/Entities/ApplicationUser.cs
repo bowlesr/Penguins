@@ -6,9 +6,16 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Penguins_Front_End.Models.Entities
 {
+    /// <summary>
+    /// 
+    /// Entity Application User
+    /// 
+    /// </summary>
     public class ApplicationUser : IdentityUser //Derives from IdentityUser
     {
+        //First name of user
         public string FirstName { get; set; }
+        //Last Name of user
         public string LastName { get; set; }
 
         [NotMapped]
@@ -19,6 +26,7 @@ namespace Penguins_Front_End.Models.Entities
             Roles = new List<string>(); //Instantiated Roles as a List
         }
 
+        //Returns roles
         public bool HasRole(string roleName)
         {
             return Roles.Any(r => r == roleName);

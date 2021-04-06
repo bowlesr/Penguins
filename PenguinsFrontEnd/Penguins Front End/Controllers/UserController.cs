@@ -17,31 +17,51 @@ using System.Threading;
 
 namespace Penguins_Front_End.Controllers
 {
+    /// The User Controller
+    /// This Controller holds the methods to create the graph
+    /// Admin priveleges
     [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
+        //Variables
         private readonly IUserRepository _userRepo; //Injected the UserRepository
         private readonly IRoleRepository _roleRepo; //Injected the RoleRepository
         private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
         private List<MetricsVM> data = new List<MetricsVM>();        
 
-        
+        /// <summary>
+        /// 
+        /// UserController Constructor
+        /// 
+        /// </summary>
+        /// <param name="userRepo"></param>
+        /// <param name="roleRepo"></param>
         public UserController(IUserRepository userRepo, IRoleRepository roleRepo)
         {
             _userRepo = userRepo;
             _roleRepo = roleRepo;            
         }
 
-        //Empty Constructor to be able to create an object for testing
+        /// <summary>
+        /// 
+        /// Empty Constructor to create object in testing
+        /// 
+        /// </summary>
         public UserController()
         {
         }
 
+        /// <summary>
+        /// 
+        /// ChartData that creates the chart
+        /// 
+        /// </summary>
+        /// <returns>sjson object</returns>
         public string ChartData()
         {
             
             //       userName, howMany
-            Dictionary<string, int> userCount = new Dictionary<string, int>();
+            Dictionary<string, int> userCount = new Dictionary<string, int>(); //New Dictionary
             foreach (var item in data)
             {                
                 if (userCount.ContainsKey(item.UserName))
@@ -53,95 +73,28 @@ namespace Penguins_Front_End.Controllers
                     userCount.Add(item.UserName,1);
                 }                
             }
-            var sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented);
+            var sjson = JsonConvert.SerializeObject(userCount, Formatting.Indented); //Converts data
             sjson = sjson.Replace('{', '[');
             sjson = sjson.Replace('}', ']');
             sjson = sjson.Replace(':', ',');
             Console.WriteLine(sjson);
             
+            //return json
             return sjson;
             
         }
 
         /// <summary>
-        /// Index action method
+        /// 
+        /// Gets all the users Email, Username, Numberofroles, and the rolenames
+        /// 
         /// </summary>
-        /// <returns></returns>
-        /*public async Task<IActionResult> Index()
-        {
-            
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(url);
-
-                client.DefaultRequestHeaders.Clear();
-
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = await client.GetAsync("");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var metrics = response.Content.ReadAsStringAsync().Result;
-                    data = JsonConvert.DeserializeObject<List<MetricsVM>>(metrics);
-                }
-                ChartData();
-                return View(data);
-            }
-
-        }*/
-
-       /* public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Create(MetricsVM metricsVM)
-        {
-            //MetricsVM user = new MetricsVM { UserId = 33, UserName = "Bob", LoginTime = "11:25", LogoutTime = "6:30" };
-            using (var client = new HttpClient())
-            using (var request = new HttpRequestMessage(HttpMethod.Post, url))
-            {
-                var json = JsonConvert.SerializeObject(metricsVM);
-                using (var stringContent = new StringContent(json, Encoding.UTF8, "application/json"))
-                {
-                    request.Content = stringContent;
-
-                    using (var response = await client
-                        .SendAsync(request, HttpCompletionOption.ResponseHeadersRead)
-                        .ConfigureAwait(false))
-                    {
-                        response.EnsureSuccessStatusCode();
-                        return RedirectToAction("Index");
-                    }
-                }
-            } 
-        }*/
-        
-        /*public ActionResult Delete(int id)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(url);
-                var deleteTask = client.DeleteAsync(url +"/" + id.ToString());
-                deleteTask.Wait();
-
-                var result = deleteTask.Result;
-                //var response = client.DeleteAsync(uri).Result;
-                if (result.IsSuccessStatusCode)
-                {
-
-                    return RedirectToAction("Index");
-                }
-            }
-
-            return RedirectToAction("Index");
-        }*/
-
+        /// <returns>view of userlist</returns>
         public async Task<IActionResult> UserList()
         {
+            //Reads all
             var users = await _userRepo.ReadAllAsync();
+            //Gets all user info
             var userList = users
                 .Select(u => new UserListVM
                 {
@@ -150,13 +103,16 @@ namespace Penguins_Front_End.Controllers
                     NumberOfRoles = u.Roles.Count,
                     RoleNames = string.Join(",", u.Roles.ToArray())
                 });
+            //return the view of data
             return View(userList);
         }
 
         /// <summary>
+        /// 
         /// Assigns role action method
+        /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>view of model</returns>
         public async Task<IActionResult> AssignRoles()
         {
             var users = await _userRepo.ReadAllAsync(); //Read all users into users asynchronously
@@ -168,10 +124,12 @@ namespace Penguins_Front_End.Controllers
         }
 
         /// <summary>
+        /// 
         /// AssignRoles action Post method.
+        /// 
         /// </summary>
         /// <param name="roleVM">The role vm.</param>
-        /// <returns></returns>
+        /// <returns>redirected to index view</returns>
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> AssignRoles(AssignRoleVM roleVM)
         {

@@ -13,18 +13,29 @@ using System.Threading.Tasks;
 
 namespace Penguins_Front_End.Controllers
 {
+    /// The Data Controller
+    /// This Controller holds the methods to manipulate data
+    /// Admin priveleges
     [Authorize(Roles = "Admin")]
     public class DataController : Controller
     {
+        //API Path
         private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
+        //List of metrics
         private List<MetricsVM> data = new List<MetricsVM>();
 
         //Empty Constructor to be able to create an object for testing
         public DataController() { }
 
-        // GET: DataController1
+        /// <summary>
+        /// 
+        /// Index method to create the view
+        /// 
+        /// </summary>
+        /// <returns>View of Data</returns>
         public async Task<ActionResult> Index()
         {
+            //Using HTTPClient to access data from the api and converts the data to JSON
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(url);
@@ -44,24 +55,28 @@ namespace Penguins_Front_End.Controllers
             }
         }
 
-        // GET: DataController1/Details/5
-        //public ActionResult Details(int id)
-        //{
-        //    return View();
-        //}
-
-        // GET: DataController1/Create
+        /// <summary>
+        /// 
+        /// Get create method
+        /// 
+        /// </summary>
+        /// <returns>View</returns>
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: DataController1/Create
+        /// <summary>
+        /// 
+        /// Post create method
+        /// 
+        /// </summary>
+        /// <param name="metricsVM"></param>
+        /// <returns>redirected to index view</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(MetricsVM metricsVM)
         {
-            //MetricsVM user = new MetricsVM { UserId = 33, UserName = "Bob", LoginTime = "11:25", LogoutTime = "6:30" };
             using (var client = new HttpClient())
             using (var request = new HttpRequestMessage(HttpMethod.Post, url))
             {
@@ -81,28 +96,11 @@ namespace Penguins_Front_End.Controllers
             }
         }
 
-        // GET: DataController1/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
-
-        //// POST: DataController1/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        // GET: DataController1/Delete/5
+        /// <summary>
+        /// Get method of delete 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Redirected to index view</returns>
         public ActionResult Delete(int id)
         {
             using (HttpClient client = new HttpClient())
@@ -122,20 +120,5 @@ namespace Penguins_Front_End.Controllers
 
             return RedirectToAction("Index");
         }
-
-        // POST: DataController1/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
     }
 }
