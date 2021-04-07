@@ -41,6 +41,11 @@ namespace PenguinsAPI
                 Configuration.GetConnectionString("DefaultConnection")));
             //Enables use of repo
             services.AddScoped<IMetricsRepository, DBMetricsRepository>();
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod().AllowAnyHeader());
+            });
         }
 
         /// Name:       Configure
@@ -61,6 +66,7 @@ namespace PenguinsAPI
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseCors("CorsPolicy");
             app.UseRouting();
 
             app.UseAuthorization();
