@@ -27,6 +27,15 @@
         google.charts.load('visualization', { packages: ['corechart'] });
         google.charts.setOnLoadCallback(drawLineChart);
 
+        function count_times(arr) {
+                occurrences = arr.reduce(function (occ, item) {
+                    occ[item] = (occ[item] || 0) + 1;
+                    return occ;
+                }, {});
+                const occurrences_arr = Object.entries(occurrences);
+                return occurrences_arr;
+            }
+
         function chartData(x, y, title, curve) {
 
             const type = input =>
@@ -36,17 +45,19 @@
 
             //console.log("X: "+x);
             //console.log("X: "+y);
-            debugger;
-            data.addColumn(type(x), x);
-            data.addColumn(type(y), y);
-            x.forEach((xval, index) => {
-                console.log('X: ' + x);
-                console.log('Y: ' + y[index]);
-                const yval = y[index];
-                data.addRows([
-                    [xval, yval],
-                ]);
+            data.addColumn(type(x[0]), x);
+            data.addColumn(type(y[0]), y);
+            var count = 0;
+            x.forEach((xval) => {
+                count++;
             });
+            data.addRows(count);
+            for (var i = 0; i < count; i++) 
+                for (var k = 0; k < 2; k++)//Total Column 
+                    if (k == 0)
+                        data.setCell(i, k, x[i]);//if first Column is String
+                    else
+                        data.setCell(i, k, y[i]);//if other columns are int type... for charts mostly we treat just first column as string
 
             var options = {
                 title: title,
@@ -54,7 +65,7 @@
                 legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 14 } }  // You can position the legend on 'top' or at the 'bottom'.
             };
 
-            var bar_chart = new google.visualization.BarChart(document.getElementById('container-fluid'));
+            var bar_chart = new google.visualization.ColumnChart(document.getElementById('container-fluid'));
             bar_chart.draw(data, options);      // Draw the chart with Options
         }
 
