@@ -44,6 +44,16 @@ namespace Penguins_Front_End
             services.AddScoped<IUserRepository, DbUserRepository>(); //Added DbUserRepository and Interface to ConfigureServices
             services.AddScoped<Initializer>(); //Configured Initializer
             services.AddScoped<IRoleRepository, DbRoleRepository>(); //Configured Role Repository and Interface
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                            //.WithOrigins(our front-end url goes here)
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                //.AllowCredentials()
+                );
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +72,7 @@ namespace Penguins_Front_End
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCors();
             app.UseRouting();
 
             app.UseAuthentication();
