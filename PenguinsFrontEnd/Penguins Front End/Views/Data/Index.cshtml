@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Penguins_Front_End.Models.ViewModels.MetricsVM>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Metrics";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Add Metric</a>
+    <a class="btn btn-primary btn-sm" asp-action="Create">Add Metric</a>
 </p>
 <table class="table">
     <thead>
@@ -44,7 +44,7 @@
                     @Html.DisplayFor(modelItem => item.LogoutTime)
                 </td>
                 <td>
-                    <a asp-action="Delete" asp-controller="Data" asp-route-id="@item.UserId">Delete</a>
+                    <a class="btn btn-link text-primary" asp-action="Delete" asp-controller="Data" asp-route-id="@item.UserId">Delete</a>
                 </td>
             </tr>
         }
