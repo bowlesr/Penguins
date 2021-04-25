@@ -1,12 +1,11 @@
 ﻿@model Penguins_Front_End.Models.ViewModels.AssignRoleVM
 
 @{
-    ViewData["Title"] = "AssignRoles";
+    ViewData["Title"] = "Assign Role";
 }
 
-<h1>AssignRoles</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>AssignRoleVM</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -33,14 +32,14 @@
                 <span asp-validation-for="RoleName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Apply Role" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-link text-primary" asp-action="UserList">Back to User List</a>
 </div>
 
 @section Scripts {

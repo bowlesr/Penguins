@@ -47,9 +47,9 @@ namespace Penguins_Front_End.Controllers
         /// Empty Constructor to create object in testing
         /// 
         /// </summary>
-        public UserController()
-        {
-        }
+        //public UserController()
+        //{
+        //}
 
         /// <summary>
         /// 
@@ -134,7 +134,7 @@ namespace Penguins_Front_End.Controllers
         public async Task<IActionResult> AssignRoles(AssignRoleVM roleVM)
         {
             await _userRepo.AssignRoleAsync(roleVM.UserName, roleVM.RoleName); //Call user repository's AssignRoleAsync
-            return RedirectToAction("Index", "User"); //Redirect to User Index
+            return RedirectToAction("UserList", "User"); //Redirect to User List
         }
     }
 }
