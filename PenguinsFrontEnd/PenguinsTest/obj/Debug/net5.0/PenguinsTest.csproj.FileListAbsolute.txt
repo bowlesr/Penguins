@@ -225,3 +225,8 @@ C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Deb
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\ref\PenguinsTest.dll
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.pdb
 C:\Users\zcarr\Documents\SE2\repo\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.genruntimeconfig.cache
+C:\Users\offic\ETSU 2020\Spring 2021\finalprojectse2\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.csprojAssemblyReference.cache
+C:\Users\offic\ETSU 2020\Spring 2021\finalprojectse2\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\offic\ETSU 2020\Spring 2021\finalprojectse2\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.AssemblyInfoInputs.cache
+C:\Users\offic\ETSU 2020\Spring 2021\finalprojectse2\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.AssemblyInfo.cs
+C:\Users\offic\ETSU 2020\Spring 2021\finalprojectse2\Penguins\PenguinsFrontEnd\PenguinsTest\obj\Debug\net5.0\PenguinsTest.csproj.CoreCompileInputs.cache
