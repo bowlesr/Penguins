@@ -4,62 +4,6 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<style>
-
-    /* This style sheet is pulled from W3School's hwo to make dropdown menus article,
-    * https://www.w3schools.com/howto/howto_js_dropdown.asp
-    */
-
-/* Dropdown Button */
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-   position: relative;
-   display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-     background-color: #ddd
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-    display: block;
-}
-</style>
-
 <header>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -73,27 +17,14 @@
     <select id="selectorY">
         <option value="Invalid" hidden>Please Choose a Y-Value</option>
     </select>
-    <input type="text" name="Title:" size="40" onchange="">
-     <div class="dropdown" id="XDrop">
-            <button onclick="" class="dropbtn" id="X">Independent Variable</button>
-            <div id="xDropDown" class="dropdown-content"></div>
-        </div>
-        <div class="dropdown" id="YDrop">
-            <button onclick="" class="dropbtn" id="X">Dependent Variable</button>
-            <div id="yDropDown" class="dropdown-content">
-                <a onclick ="" href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
+    <input id="titleForm" type="text" name="Title:" size="40" onchange="">
 
-    <button onclick="test()" id="Generator">Show Chart</button>
+    <button onclick="SetupChart()" id="Generator">Show Chart</button>
     <div class="container">
         <div id="container-fluid" class="container-fluid"></div>
         <p id="jsonLiteral"></p>
     </div>
-
-    <script type="text/javascript">
+<script type="text/javascript">
         google.charts.load('visualization', { packages: ['corechart'] });
         var X, Y, Title, select;
         var data = {};
@@ -104,26 +35,11 @@
         const type = input =>
             Object.prototype.toString.call(input).replace(/(\[object |\])/ig, '').toLowerCase();
 
-       @* //Modified From above W3Schools link- hides dropdown menus when clicked off of.
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (i = 0; i < dropdowns.length; i++)
-                    if (dropdowns[i].classList.contains('show'))
-                        openDropdown.classList.remove('show');
-            }
-        }*@
-
         function SetSelections() {
-            console.log("Setting elements");
-
-            for (i in headers)
-                console.log("Headers[" + i + "]: " + headers[i]);
-            console.log("Headers written");
-            for (i in headers)
+            for (i in headers) {
                 makeOption('selectorX', headers[i], headers[i]);
-            for (i in headers)
                 makeOption('selectorY', headers[i], headers[i]);
+            }
             makeOption('selectorY', 'COUNT', 'Count');
         }
 
@@ -152,20 +68,11 @@
             base.appendChild(newElement);
         }
 
-      @*  function showOpts(variable) {
-            //makeElement('yDropDown', "a", "test");
-            makeOption('selectorY', 'Answer', "Test");
-            makeOption('selectorX', 'Answer', "Test");
-            const selectedAns = document.getElementById('selectorY').value;
-            
-            document.getElementById('jsonLiteral').innerHTML = "Selected Y Variable: " + selectedAns;
-            document.getElementById(variable).classList.toggle("show");
-        }*@
-        function test() {
+        function SetupChart() {
 
             getOpts('X');
             getOpts('Y');
-            getOpts('TITLE')
+            getOpts('TITLE');
             for (i in headers) {
                 if (headers[i] != X) continue;
                 X = Object.values(data[headers[i]]);
@@ -180,48 +87,25 @@
                 X = Object.keys(timesCounted);
                 Y = Object.values(timesCounted);
             }
-            SetupChart();
-        }
-        function SetupChart() {
-
-            console.log("1");
             var cdata = new google.visualization.DataTable();
-            console.log("2");
-            console.log("X: " + X);
-            console.log("Type of X: " + type(X));
-            console.log("Type of X[0]: " + type(X[0]));
-
             cdata.addColumn(type(X[0]), X);
-            console.log("3");
-
             cdata.addColumn(type(Y[0]), Y);
-            console.log("4");
-
-            var count = 0;
-            X.forEach((xval) => {
-                count++;
-            });
-            console.log("Count from old method: " + count);
+           
             var count = Object.keys(X).length;
-            console.log("Count from new method: " + count);
-
-            console.log("5");
-
+          
             cdata.addRows(count);
-            console.log("6");
 
             for (var i = 0; i < count; i++) {
                 cdata.setCell(i, 0, X[i]);
                 cdata.setCell(i, 1, Y[i]);
             }
-            console.log("7");
 
             var options = {
-                title: "T",
+                title: Title,
                 curveType: 'function',
-                legend: { position: 'bottom', textStyle: { color: '#555', fontSize: 14 } }  // You can position the legend on 'top' or at the 'bottom'.
+                legend: 'none',  // You can position the legend on 'top' or at the 'bottom'.
+                tooltip: 'none'
             };
-            console.log("8");
 
             var bar_chart = new google.visualization.ColumnChart(document.getElementById('container-fluid'));
             bar_chart.draw(cdata, options);      // Draw the chart with Options
@@ -231,28 +115,23 @@
             console.log("opt 1");
             if (variable == 'X') {
                 var elem = document.getElementById('selectorX').value;
-                console.log("opt X");
-
-                if (elem == "Invalid") alert("Please Enter choose an X-Value");
+                if (elem == "Invalid") alert("Please choose an X-Value");
                 else X = elem;
             }
             if (variable == 'Y') {
                 var elem = document.getElementById('selectorY').value;
-                console.log("opt Y");
-
-                if (elem == "Invalid") alert("Please Enter choose an Y-Value");
+                if (elem == "Invalid") alert("Please choose an Y-Value");
                 else Y = elem;
             }
-            @*if (variable == 'TITLE') {
+            if (variable == 'TITLE') {
                 var elem = document.getElementById('titleForm').value;
                 if (elem == "Invalid") alert("Please Give the Graph a title");
                 else Title = elem;
-            }*@ else { }
+            } else { }
         }
 
         function ReadAll() {
             $(document).ready(function () {
-                console.log("Reading from DB");
                 $.ajax({
                     type: "GET",
                     url: "https://localhost:44391/api/Metrics",
@@ -282,8 +161,6 @@
                             console.log("Data [" + headers[i] + "]: " + Object.values(data[headers[i]]));
 
                         SetSelections();
-                       @* const name_and_count = count_times(Object.values(data[headers[1]]));
-                        DrawChart(Object.keys(name_and_count), Object.values(name_and_count), 'User vs Number of Sessions', 'function');*@
                     },
                     error: function (errormessage) {
                         $('#h2').html(errormessage.responseText);
