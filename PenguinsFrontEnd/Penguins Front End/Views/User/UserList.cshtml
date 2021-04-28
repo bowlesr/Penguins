@@ -8,45 +8,46 @@
 
 <table class="table">
     <thead>
-    <tr class="table-active">
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfRoles)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoleNames)
-        </th>
-        <th></th>
-    </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfRoles)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoleNames)
+            </th>
+            <th></th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfRoles)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RoleNames)
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfRoles)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoleNames)
+                </td>
+            </tr>
+        }
     </tbody>
     <tfoot>
-    <tr>
-        <td>
-            <a class="btn btn-link text-primary" asp-action="AssignRoles" asp-controller="User">Assign Roles</a>
-        </td>
-    </tr>
+        <tr>
+            <td>
+                <a class="btn btn-primary btn-sm" asp-action="AssignRoles" asp-controller="User">Assign Roles</a>
+            </td>
+        </tr>
     </tfoot>
 </table>
