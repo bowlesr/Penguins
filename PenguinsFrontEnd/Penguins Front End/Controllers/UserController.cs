@@ -26,7 +26,7 @@ namespace Penguins_Front_End.Controllers
         //Variables
         private readonly IUserRepository _userRepo; //Injected the UserRepository
         private readonly IRoleRepository _roleRepo; //Injected the RoleRepository
-        private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
+        //private string url = "http://penguinsapi.us-east-1.elasticbeanstalk.com/api/Metrics";
         private List<MetricsVM> data = new List<MetricsVM>();        
 
         /// <summary>
