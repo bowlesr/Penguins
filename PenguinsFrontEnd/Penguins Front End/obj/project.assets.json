@@ -9126,23 +9126,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\offic\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\rbowl\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\offic\\ETSU 2020\\Spring 2021\\finalprojectse2\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+      "projectUniqueName": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
       "projectName": "Penguins Front End",
-      "projectPath": "C:\\Users\\offic\\ETSU 2020\\Spring 2021\\finalprojectse2\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
-      "packagesPath": "C:\\Users\\offic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\offic\\ETSU 2020\\Spring 2021\\finalprojectse2\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
+      "projectPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\Penguins Front End.csproj",
+      "packagesPath": "C:\\Users\\rbowl\\.nuget\\packages\\",
+      "outputPath": "G:\\ETSU\\GetHub\\Penguins\\Penguins\\PenguinsFrontEnd\\Penguins Front End\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\offic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rbowl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -9222,7 +9225,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
